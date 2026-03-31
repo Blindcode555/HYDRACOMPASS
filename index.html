@@ -1509,7 +1509,195 @@ body::after {
 /* 4 · Soften pills, scale title */
 .hero-top { opacity: .6; margin-bottom: 1rem !important; }
 .hero-title { font-size: clamp(2.6rem,7vw,5.6rem) !important; }
+.controlled-reply-agent {
+  padding: 72px 20px;
+}
 
+.reply-agent-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reply-agent-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.reply-agent-kicker {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(190, 220, 255, 0.76);
+}
+
+.reply-agent-head h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.08;
+  color: #f4fbff;
+}
+
+.reply-agent-sub {
+  margin: 0 auto;
+  max-width: 720px;
+  line-height: 1.65;
+  color: rgba(220, 235, 255, 0.8);
+}
+
+.reply-agent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.reply-agent-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(140, 190, 255, 0.14);
+  border-radius: 20px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.reply-label,
+.reply-output-label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(185, 215, 255, 0.72);
+  margin-bottom: 10px;
+}
+
+.reply-textarea,
+.reply-draft-box {
+  width: 100%;
+  min-height: 240px;
+  resize: vertical;
+  border-radius: 16px;
+  border: 1px solid rgba(140, 190, 255, 0.16);
+  background: rgba(3, 10, 20, 0.8);
+  color: #eaf6ff;
+  padding: 16px;
+  font: inherit;
+  line-height: 1.6;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.reply-textarea:focus,
+.reply-draft-box:focus {
+  border-color: rgba(90, 200, 255, 0.45);
+  box-shadow: 0 0 0 1px rgba(90, 200, 255, 0.18);
+}
+
+.reply-output-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.reply-output-item {
+  border: 1px solid rgba(140, 190, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(3, 10, 20, 0.58);
+  padding: 14px;
+}
+
+.reply-output-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f4fbff;
+}
+
+.reply-output-block {
+  margin-bottom: 18px;
+}
+
+.reply-output-box {
+  min-height: 110px;
+  border-radius: 16px;
+  border: 1px solid rgba(140, 190, 255, 0.14);
+  background: rgba(3, 10, 20, 0.58);
+  color: #dcecff;
+  padding: 16px;
+  line-height: 1.65;
+}
+
+.reply-agent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.reply-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 13px 18px;
+  min-width: 150px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+}
+
+.reply-btn:hover {
+  transform: translateY(-1px);
+}
+
+.reply-btn-primary {
+  background: linear-gradient(135deg, #3fe6ff, #4f8cff);
+  color: #07111f;
+}
+
+.reply-btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(140, 190, 255, 0.18);
+  color: #eaf6ff;
+}
+
+.reply-approval-row {
+  margin: 10px 0 2px;
+}
+
+.approval-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(220, 235, 255, 0.84);
+  font-size: 0.95rem;
+}
+
+.risk-low {
+  color: #8fffc3;
+}
+
+.risk-medium {
+  color: #ffd36a;
+}
+
+.risk-high {
+  color: #ff8f8f;
+}
+
+.risk-neutral {
+  color: #f4fbff;
+}
+
+@media (max-width: 900px) {
+  .reply-agent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reply-textarea,
+  .reply-draft-box {
+    min-height: 190px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1660,6 +1848,7 @@ body::after {
         </div>
         <div class="ex-chips" id="ex-chips" aria-label="Quick-launch examples">
           <span class="ex-label">Quick-launch ›</span>
+
           <button class="ex-chip">AI YouTube channel</button>
           <button class="ex-chip">Podcast automation</button>
           <button class="ex-chip">Indie SaaS idea</button>
@@ -1692,6 +1881,65 @@ body::after {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           GENERATE EXECUTION PATH
         </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="controlled-reply-agent" id="reply-agent">
+  <div class="reply-agent-wrap">
+    <div class="reply-agent-head">
+      <p class="reply-agent-kicker">CONTROLLED REPLY AGENT</p>
+      <h2>Analyze a message and draft a controlled reply</h2>
+      <p class="reply-agent-sub">
+        Paste any inbound message. Hydra will classify it, summarize it, estimate risk, and draft a reply for approval.
+      </p>
+    </div>
+
+    <div class="reply-agent-grid">
+      <div class="reply-agent-panel input-panel">
+        <label for="messageInput" class="reply-label">Paste inbound message</label>
+        <textarea id="messageInput" class="reply-textarea" placeholder="Paste email, lead inquiry, customer message, or request here..."></textarea>
+
+        <div class="reply-agent-actions">
+          <button id="analyzeBtn" class="reply-btn reply-btn-primary">Analyze & Draft</button>
+          <button id="clearBtn" class="reply-btn reply-btn-secondary" type="button">Clear</button>
+        </div>
+      </div>
+
+      <div class="reply-agent-panel output-panel">
+        <div class="reply-output-top">
+          <div class="reply-output-item">
+            <span class="reply-output-label">Intent</span>
+            <div id="intentOutput" class="reply-output-value">—</div>
+          </div>
+
+          <div class="reply-output-item">
+            <span class="reply-output-label">Risk</span>
+            <div id="riskOutput" class="reply-output-value risk-neutral">—</div>
+          </div>
+        </div>
+
+        <div class="reply-output-block">
+          <span class="reply-output-label">Summary</span>
+          <div id="summaryOutput" class="reply-output-box">No analysis yet.</div>
+        </div>
+
+        <div class="reply-output-block">
+          <span class="reply-output-label">Suggested Reply</span>
+          <textarea id="replyDraftOutput" class="reply-draft-box" placeholder="The drafted reply will appear here..."></textarea>
+        </div>
+
+        <div class="reply-approval-row">
+          <label class="approval-toggle">
+            <input type="checkbox" id="approvalRequired" checked />
+            <span>Approval required</span>
+          </label>
+        </div>
+
+        <div class="reply-agent-actions">
+          <button id="copyReplyBtn" class="reply-btn reply-btn-primary" type="button">Copy Reply</button>
+          <button id="regenerateBtn" class="reply-btn reply-btn-secondary" type="button">Regenerate</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1877,6 +2125,184 @@ body::after {
 <script>
 'use strict';
 
+  const messageInput = document.getElementById('messageInput');
+  const analyzeBtn = document.getElementById('analyzeBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const intentOutput = document.getElementById('intentOutput');
+  const riskOutput = document.getElementById('riskOutput');
+  const summaryOutput = document.getElementById('summaryOutput');
+  const replyDraftOutput = document.getElementById('replyDraftOutput');
+  const copyReplyBtn = document.getElementById('copyReplyBtn');
+  const regenerateBtn = document.getElementById('regenerateBtn');
+  const approvalRequired = document.getElementById('approvalRequired');
+
+  function cleanText(text) {
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
+  function truncateText(text, maxLength = 220) {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength).trim() + '...';
+  }
+
+  function detectIntent(text) {
+    const t = text.toLowerCase();
+
+    if (/(price|pricing|cost|quote|availability|tour|showing|property|bedroom|apartment|home|listing|budget)/.test(t)) {
+      return 'Lead inquiry';
+    }
+
+    if (/(support|issue|problem|error|not working|help|broken|fix)/.test(t)) {
+      return 'Support request';
+    }
+
+    if (/(meeting|schedule|calendar|availability|tomorrow|next week|call)/.test(t)) {
+      return 'Scheduling request';
+    }
+
+    if (/(resume|cv|job|position|application|cover letter)/.test(t)) {
+      return 'Career request';
+    }
+
+    return 'General inquiry';
+  }
+
+  function detectRisk(text) {
+    const t = text.toLowerCase();
+
+    if (/(password|social security|ssn|credit card|bank account|routing number|passport|driver's license|medical|diagnosis)/.test(t)) {
+      return 'high';
+    }
+
+    if (/(contract|payment|invoice|legal|confidential|private|salary|wire|account)/.test(t)) {
+      return 'medium';
+    }
+
+    return 'low';
+  }
+
+  function buildSummary(text, intent, risk) {
+    const cleaned = cleanText(text);
+    const shortText = truncateText(cleaned, 260);
+
+    return `Intent detected: ${intent}. Risk level: ${risk.toUpperCase()}. Main message content: ${shortText}`;
+  }
+
+  function buildReply(text, intent, risk) {
+    const t = text.toLowerCase();
+
+    if (intent === 'Lead inquiry') {
+      return `Hi, thank you for your message. I’d be happy to help you with options and availability. Could you please share your preferred area, budget range, and timing so I can narrow down the best next steps?`;
+    }
+
+    if (intent === 'Support request') {
+      return `Hi, thank you for reaching out. I understand you're experiencing an issue. Could you please share a bit more detail about the problem, including any error messages or screenshots, so I can help you more accurately?`;
+    }
+
+    if (intent === 'Scheduling request') {
+      return `Hi, thank you for your message. I’d be glad to coordinate a time. Please share your availability or preferred day and time, and I’ll help organize the next step.`;
+    }
+
+    if (intent === 'Career request') {
+      return `Hi, thank you for your message. I’d be happy to review the opportunity and help with next steps. Please send the role details or job description, and I can tailor the response accordingly.`;
+    }
+
+    if (risk === 'high') {
+      return `Hi, thank you for your message. I received your request. For security reasons, please avoid sending highly sensitive information through this channel. If needed, I can help guide you to a safer next step.`;
+    }
+
+    if (/(hello|hi|hey)/.test(t)) {
+      return `Hi, thank you for your message. I appreciate you reaching out. I reviewed your note and I’d be happy to help. Could you share a bit more detail so I can point you in the right direction?`;
+    }
+
+    return `Hi, thank you for your message. I reviewed your note and I’d be happy to help. Could you share a bit more context so I can respond more accurately?`;
+  }
+
+  function setRiskUI(risk) {
+    riskOutput.classList.remove('risk-low', 'risk-medium', 'risk-high', 'risk-neutral');
+
+    if (risk === 'low') {
+      riskOutput.classList.add('risk-low');
+      riskOutput.textContent = 'Low';
+    } else if (risk === 'medium') {
+      riskOutput.classList.add('risk-medium');
+      riskOutput.textContent = 'Medium';
+    } else if (risk === 'high') {
+      riskOutput.classList.add('risk-high');
+      riskOutput.textContent = 'High';
+    } else {
+      riskOutput.classList.add('risk-neutral');
+      riskOutput.textContent = '—';
+    }
+  }
+
+  function analyzeMessage() {
+    const raw = messageInput.value.trim();
+
+    if (!raw) {
+      intentOutput.textContent = '—';
+      setRiskUI('');
+      summaryOutput.textContent = 'Please paste a message first.';
+      replyDraftOutput.value = '';
+      return;
+    }
+
+    const intent = detectIntent(raw);
+    const risk = detectRisk(raw);
+    const summary = buildSummary(raw, intent, risk);
+    let reply = buildReply(raw, intent, risk);
+
+    if (approvalRequired.checked) {
+      reply += `\n\n[Pending approval before sending]`;
+    }
+
+    intentOutput.textContent = intent;
+    setRiskUI(risk);
+    summaryOutput.textContent = summary;
+    replyDraftOutput.value = reply;
+  }
+
+  analyzeBtn.addEventListener('click', analyzeMessage);
+
+  regenerateBtn.addEventListener('click', analyzeMessage);
+
+  clearBtn.addEventListener('click', () => {
+    messageInput.value = '';
+    intentOutput.textContent = '—';
+    setRiskUI('');
+    summaryOutput.textContent = 'No analysis yet.';
+    replyDraftOutput.value = '';
+    approvalRequired.checked = true;
+  });
+
+  copyReplyBtn.addEventListener('click', async () => {
+    const text = replyDraftOutput.value.trim();
+    if (!text) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      copyReplyBtn.textContent = 'Copied';
+      setTimeout(() => {
+        copyReplyBtn.textContent = 'Copy Reply';
+      }, 1200);
+    } catch (error) {
+      copyReplyBtn.textContent = 'Copy failed';
+      setTimeout(() => {
+        copyReplyBtn.textContent = 'Copy Reply';
+      }, 1200);
+    }
+  });
+// (remove it completely OR replace with a comment)
+'use strict';
+
+/* existing JS */
+
+var MISSION_TYPES = [
+  ...
+];
+
+/* reply agent JS */
+</script>
 /* ═══ A · CONFIG ═══ */
 var MISSION_TYPES = [
   { id:'content',  ico:'video',      label:'Video'    },
