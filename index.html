@@ -153,8 +153,7 @@ body::after {
 .boot-overlay {
   position: fixed; inset: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: center;
-  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,238,255,0.06) 0%, transparent 65%),
-              linear-gradient(180deg, #020509 0%, #040a12 100%);
+  background: #000000;
   transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 .boot-overlay.gone { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -172,7 +171,7 @@ body::after {
 .boot-progress { width: 220px; height: 2px; background: rgba(0,238,255,0.08); border-radius: 2px; overflow: hidden; }
 .boot-fill {
   height: 100%; width: 0;
-  background: linear-gradient(90deg, var(--cyan-deep), var(--cyan));
+  background: #000000;
   transition: width 0.6s ease;
   box-shadow: 0 0 16px var(--cyan), 0 0 6px #fff;
 }
@@ -242,7 +241,7 @@ body::after {
 /* Tri-color top accent */
 .hdr-accent {
   height: 2px;
-  background: linear-gradient(90deg,
+  background: 0%,
     transparent 0%,
     var(--purple) 8%,
     var(--blue) 25%,
@@ -250,7 +249,7 @@ body::after {
     var(--cyan) 58%,
     var(--pink) 78%,
     var(--green) 92%,
-    transparent 100%);
+    transparent 100%;
   box-shadow: 0 0 18px rgba(0,238,255,0.45);
 }
 .hdr-row {
@@ -650,7 +649,7 @@ body::after {
 .btn-generate {
   display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap;
   min-height: 62px; padding: 0 32px;
-  background: linear-gradient(135deg, #00bbd0 0%, var(--cyan) 50%, #68ffda 100%);
+  background:  0%;
   color: #020d10; font-family: var(--fm); font-size: 0.88rem; font-weight: 800; letter-spacing: 0.14em;
   text-transform: uppercase; border-radius: var(--r16);
   border: 1px solid rgba(0,238,255,0.70);
@@ -1697,6 +1696,35 @@ body::after {
   .reply-draft-box {
     min-height: 190px;
   }
+}
+/* === FORCE BLACK BACKGROUND === */
+
+body {
+  background: #000 !important;
+}
+
+/* remove section gradients */
+.pg-section,
+.console-section,
+section {
+  background: transparent !important;
+}
+
+/* remove any blue glow blocks */
+.console-panel,
+.wrap,
+.hero,
+.pg-hero,
+.section,
+.container {
+  background: transparent !important;
+}
+
+/* keep cards visible but subtle */
+.console-panel,
+.reply-agent-panel {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(140, 190, 255, 0.12);
 }
 </style>
 </head>
