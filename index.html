@@ -419,14 +419,6 @@ body::after {
 .hero-panel::after  { content: ''; position: absolute; bottom: 12px; right: 12px; width: 24px; height: 24px; border-bottom: 2px solid rgba(255,45,120,0.5); border-right: 2px solid rgba(255,45,120,0.5); }
 
 .hero-top { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; z-index: 1; }
-.hero-pill {
-  display: inline-flex; align-items: center; min-height: 42px; padding: 8px 20px;
-  border-radius: var(--pill); font-family: var(--fm); font-size: 0.80rem; letter-spacing: 0.07em;
-  background: rgba(10,20,36,0.55); border: 1px solid rgba(255,255,255,0.10); color: var(--t-mid);
-}
-.hero-pill.cyan  { color: var(--cyan);  border-color: rgba(0,238,255,0.25);  background: rgba(0,238,255,0.08);  text-shadow: 0 0 10px rgba(0,238,255,0.4); }
-.hero-pill.pink  { color: var(--pink);  border-color: rgba(255,45,120,0.25); background: rgba(255,45,120,0.08); text-shadow: 0 0 10px rgba(255,45,120,0.4); }
-.hero-pill.green { color: var(--green); border-color: rgba(0,255,135,0.25);  background: rgba(0,255,135,0.08);  text-shadow: 0 0 10px rgba(0,255,135,0.4); }
 
 .hero-title {
   position: relative; z-index: 1; text-align: center;
@@ -522,14 +514,9 @@ body::after {
 
 /* 3 · Hero panel — muted gradient, no neon flare */
 .hero-panel {
-  background:
-    radial-gradient(ellipse 65% 75% at 50% -15%, rgba(28,  58, 140, 0.24) 0%, transparent 58%),
-    radial-gradient(ellipse 42% 42% at  8% 88%,  rgba(45,  28,  98, 0.09) 0%, transparent 52%),
-    radial-gradient(ellipse 38% 38% at 92% 80%,  rgba(18,  38,  88, 0.07) 0%, transparent 52%),
-    linear-gradient(175deg, rgba(10, 16, 34, 0.88) 0%, rgba(5, 9, 20, 0.78) 100%);
-  border-color:     rgba(255, 255, 255, 0.06);
-  border-top-color: rgba(255, 255, 255, 0.09);
-  box-shadow:
+  background:#000000
+  border top color #000000;
+  box-shadow:none,
     inset 0 1px 0 rgba(255, 255, 255, 0.04),
     0 28px 80px rgba(0, 0, 0, 0.55),
     0 0  60px rgba(12, 28, 75, 0.18);
