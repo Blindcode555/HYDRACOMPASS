@@ -1248,7 +1248,7 @@ body::after {
   display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;
   box-shadow:0 0 20px rgba(0,238,255,0.14);
 }
-.exp-tool-info{}
+.exp-tool-info{display: flex;}
 .exp-tool-label{font-family:var(--fm);font-size:0.58rem;letter-spacing:0.18em;color:var(--t-dim);margin-bottom:0.2rem;}
 .exp-tool-name{font-family:var(--fd);font-size:1rem;font-weight:800;color:var(--t-hi);letter-spacing:0.04em;}
 
@@ -1740,7 +1740,7 @@ section {
 }
 
 /* keep cards visible but subtle */
-.console-panel,
+
 .reply-agent-panel {
   background: transparent !important;
   border: 1px solid rgba(0, 238, 255, 0.12);
@@ -1748,6 +1748,17 @@ section {
   padding: 22px;
   backdrop-filter: none;
   box-shadow: none;
+position: relative;
+  overflow: hidden;
+}
+
+.reply-agent-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.05), transparent 60%);
+  pointer-events: none;
 
 }
 </style>
